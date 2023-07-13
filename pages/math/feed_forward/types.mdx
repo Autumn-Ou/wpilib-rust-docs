@@ -1,0 +1,72 @@
+## Types of Feed Forward Controllers
+
+In WPILib rust, we support four kinds of feed forward controllers:
+
+- Simple: a basic model of a motor or flywheel system
+- Static: a primitive model of a motor or flywheel system whose voltage is ignored
+- Elevator: a model of an elevator or telescoping system
+- Arm: a model of an arm or rotating system with weight on an end
+
+### Simple
+
+Simple controllers can be used for tasks such as controlling a flywheel while taking into account fluctuating system
+voltage.
+
+```rust copy
+use wpilib::math::controllers::feed_forward::Simple;
+
+let mut feedforward = Simple::new(ks, kv, ka);
+
+let output = feedforward.v_calculate(velocity);
+
+// or
+
+let output = feedforward.v_a_calculate(velocity, acceleration);
+
+motor.set_voltage(output);
+```
+
+### Static
+
+Static controllers can be used for tasks such as controlling a flywheel while ignoring fluctuating system voltage,
+which gives them the name "static"; they are less accurate than simple controllers but easier to set up.
+
+```rust copy
+use wpilib::math::controllers::feed_forward::Static;
+
+let mut feedforward = Static::new(kv, ka);
+
+let output = feedforward.v_calculate(velocity);
+
+// or
+
+let output = feedforward.v_a_calculate(velocity, acceleration);
+```
+
+### Elevator
+
+Elevator controllers can be used for tasks such as controlling an elevator or telescoping system.
+
+```rust copy
+use wpilib::math::controllers::feed_forward::Elevator;
+
+let mut feedforward = Elevator::new(ks, kg, kv, ka);
+
+let output = feedforward.v_calculate(velocity);
+
+// or
+
+let output = feedforward.v_a_calculate(velocity, acceleration);
+```
+
+### Arm
+
+Arm controllers can be used for tasks such as controlling an arm or rotating system with weight on an end.
+
+```rust copy
+use wpilib::math::controllers::feed_forward::Arm;
+
+let mut feedforward = Arm::new(ks, kg, kv, ka);
+
+let output = feedforward.calculate(position, velocity);
+```

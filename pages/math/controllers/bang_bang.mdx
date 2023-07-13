@@ -1,0 +1,37 @@
+## Bang Bang Control
+
+Bang bang control works on the concept of swapping between 2 states, the bang bang controllers provided in wpilib-rust
+also provides support for hysteresis, which is a range of values that the controller will not change state in, along with
+input and output clamping.
+
+### Basic Usage
+
+```rust copy
+use wpilib::math::controllers::bang_bang::BangBangController;
+
+let mut controller = BangBangController::new();
+
+controller.set_limits(-10.0, 100.0, -1.0, 1.0);
+
+controller.set_tolerance(0.5);
+
+controller.set_set_point(50.0);
+
+let output = controller.calculate(45.0, 20.0);
+```
+
+In this scenario, the controller would return 1.0, as the error is greater than the tolerance, given that the set point
+is 50.0 and the error is 5.0. If the error was -2.0, the controller would return -1.0 and if it was between -0.5 and
+0.5, the controller would return 0.0. As it is within the tolerance zone.
+
+### Bang Bang with Feed Forward
+
+Like a PID controller, the best results are obtained in conjunction with a [feed forward controller](../feed_forward/introduction)
+that provides the necessary voltage to sustain the system output at the desired state, so that the bang-bang controller
+is only responsible for rejecting disturbances. Since the bang-bang controller can only correct in the forward direction,
+however, it may be preferable to use a slightly conservative feedforward estimate to ensure that the shooter does not
+over-speed.
+
+```rust copy
+let output = controller.calculate(position, 20.0) * 12.0 + 0.9 * feedforward.calculate(setpoint);
+```

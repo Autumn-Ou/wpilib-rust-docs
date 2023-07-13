@@ -1,0 +1,50 @@
+## Translation 2D
+
+The translation of a point in 2D is given by the following matrix: `[x, y]`, where x and y are within the field coordinate
+system and measured in meters.
+
+```rust copy
+use wpilib::math::geometry::trasnlation2d::Translation2d;
+use wpilib::math::units::distance::Meter;
+
+let x = Meter::new(1.0);
+let y = Meter::new(2.0);
+
+let translation = Translation2d::new(x, y);
+```
+
+## Rotation 2D
+
+The rotation of a point in 2D is given by the following matrix: `[theta]`, where theta is the angle of rotation in
+radians.
+
+```rust copy
+use wpilib::math::geometry::rotation2d::Rotation2d;
+use wpilib::math::units::angle::Radian;
+
+let rotation = Rotation2d::new(theta);
+```
+
+## Pose 2D
+
+The pose of a point in 2D is given by the following matrix: `[x, y, theta]`, where `x` and `y` are within the field
+coordinate system, measured in meters, and `theta` is the angle of rotation in radians. It serves as a combination of
+the translation and rotation matrices and is commonly used to represent the state of a robot on the field.
+
+```rust copy
+use wpilib::math::geometry::pose2d::Pose2d;
+use wpilib::math::geometry::trasnlation2d::Translation2d;
+use wpilib::math::geometry::rotation2d::Rotation2d;
+use wpilib::math::units::distance::Meter;
+use wpilib::math::units::angle::Radian;
+
+let x = Meter::new(1.0);
+let y = Meter::new(2.0);
+let theta = Radian::new(1.34);
+
+let pose = Pose2d::new(Translation2d::new(x, y), Rotation2d::new(theta));
+
+// or simply
+
+let pose = Pose2d::new_xy_rot(1.0, 2.0, Rotation2d::new(1.34));
+```

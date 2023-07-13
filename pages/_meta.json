@@ -1,0 +1,20 @@
+{
+  "index": "Introduction",
+  "programming_basics": "Programming Basics",
+  "vendor_libraries": "Vendor Libraries",
+  "command_based": "Command Based",
+  "math": "Math",
+  "networking": "Networking",
+  "logging": "Logging",
+  "simulation": "Simulation",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/shuding_",
+    "newWindow": true
+  }
+}

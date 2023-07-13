@@ -1,0 +1,34 @@
+## Introducing Feed Forward to PID
+
+The primary issues in [PID controllers](./pid) is the lack of knowledge about system dynamics and the potential for
+integral windup, adding feed forward outputs with PID feed back outputs allows for the incorporation of system dynamics
+into the controller along with solving steady state error.
+
+As feed forward is voltage-based, it is best to use a motor's voltage-based control mode when using feed forward with
+PID.
+
+### Implementation
+
+The implementation below shows how to use this to account for the changing dynamics of an arm using
+[feed forward](../../feed_forward/types#arm) to solve for steady state error and a [PID controller](./pid).
+
+```rust copy {4-5,9}
+use wpilib::math::controllers::pid::PIDController;
+use wpilib::math::controllers::feed_forward::Arm;
+
+let mut feedforward = Arm::new(ks, kg, kv, ka);
+let mut pid = PIDController::new(1.3, 0.01, 0.2);
+
+pid.set_set_point(target);
+
+motor.set_voltage(pid.calculate(position, 20) + feedforward.calculate(position, velocity));
+```
+
+import { Callout } from "nextra/components";
+
+<Callout>
+  <p>
+    Be sure to use the correct feed forward system for each system to see
+    optimal results!
+  </p>
+</Callout>

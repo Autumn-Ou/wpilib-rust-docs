@@ -1,0 +1,56 @@
+## 2D Transforms
+
+### Translation 2D
+
+Operations on a Translation2d perform operations to the vector represented by the Translation2d.
+
+- Addition between two Translation2d `a` and `b` can be performed using the `+` operator adding the two vectors.
+- Subtraction between two Translation2d can be performed using the `-` operator subtracting the two vectors.
+- Multiplication of a Translation2d and a scalar can be performed the `*` operator.This multiplies the vector by the
+  scalar.
+- Division of a Translation2d and a scalar can be performed using the `/` operator. This divides the vector by the
+  scalar.
+- Rotation of a Translation2d by a counter-clockwise rotation (theta) about the origin can be performed by using
+  `rotate_by(Rotation2d)`. This is equivalent to multiplying the vector by the matrix:
+
+```
+[cos(theta) -sin(theta)]
+
+[sin(theta)  cos(theta)]
+```
+
+- Additionally, you can rotate a Translation2d by 180 degrees by using the unary `-` operator.
+
+### Rotation 2D
+
+Transformations for Rotation2d are just arithmetic operations on the angle measure represented by the Rotation2d.
+
+- Addition between two Rotation2d `a` and `b` can be performed using the `+` operator adding the two angles.
+- Subtraction between two Rotation2d can be performed using the `-` operator subtracting the two angles.
+- Multiplication of a Rotation2d and a scalar can be performed the `*` operator. This multiplies the angle by the
+  scalar.
+- Division of a Rotation2d and a scalar can be performed using the `/` operator. This divides the angle by the
+  scalar.
+- Additionally, you can rotate a Rotation2d by 180 degrees by using the unary `-` operator.
+
+### Transform & Twist 2D
+
+Transform2d which represents a transformation to a pose in 2d space. Twist2d represents a movement along an arc, both
+contain a `[x, y, theta]` matrix.
+
+Transform2d represents a relative transformation. It has a translation and a rotation component. Transforming a Pose2d
+by a Transform2d rotates the translation component of the transform by the rotation of the pose, and then adds the
+rotated translation component and the rotation component to the pose.
+
+Twist2d represents a change in distance along an arc. Usually, this class is used to represent the movement of a
+drivetrain, where the x component is the forward distance driven, the y component is the distance driven to the side,
+and the component is the change in heading.
+
+import { Callout } from "nextra/components";
+
+<Callout>
+  <p>
+    For non-holonomic drivetrains the y component of a Twist2d should always be
+    zero.
+  </p>
+</Callout>

@@ -1,0 +1,21 @@
+## Unit System
+
+WPILib Rust provides a unit system to help prevent conversion errors, enforce correct inputs and keep code as neat and
+readable as possible. Some units can auto convert to the correct type such as feet to meters or degrees to radians,
+in addition to this, some math operations on units are supported by default `Meter * Second` will automatically return
+`MetersPerSecond`.
+
+### Demo
+
+```rust copy
+use wpilib::math::units::time::Second;
+use wpilib::math::units::distance::{Meter};
+
+let distance = Meter::new(1.32);
+let time_elapsed = Second::new(2.3467);
+
+let speed = distance / time_elapsed;
+```
+
+In this case, speed is now type `MetersPerSecond` and can be used as the input to for example a feed forward calculation
+requiring velocity.

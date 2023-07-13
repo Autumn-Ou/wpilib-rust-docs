@@ -1,0 +1,44 @@
+# Using Cargo
+
+## Building with Cargo
+
+Cargo serves as both a dependency manager and a build system, to build with cargo is as simple as
+`cargo build`, to run unit tests `cargo test` and to deploy your code `cargo wpi-deploy --athena`
+
+## Adding Dependencies
+
+Inside your cargo.toml file under dependencies, dependency names and versions can be added; these deps will pull from
+crates.io
+
+```toml copy filename="cargo.toml" /md,mdx/
+[dependencies]
+nalgebra = "0.32.2"
+```
+
+### Feature Flags
+
+Dependencies may also contain optional features that can be included like such:
+
+```toml copy filename="cargo.toml" /md,mdx/
+[dependencies]
+serde = { version = "^1", features = ["derive"] }
+```
+
+### Other Sources
+
+Dependencies can also pull from a git repo or a local file path instead.
+
+```toml copy filename="cargo.toml" /md,mdx/
+[dependencies]
+wpilog = { git = "https://github.com/oh-yes-0-fps/wpilog-rs", version = "^0.1", features = [ "tracing" ] }
+wpilib-macros = { path = "../wpilib-macros", version = "0.1.0" }
+```
+
+import { Callout } from "nextra/components";
+import Link from "next/link";
+
+<Callout>
+  <Link href="https://doc.rust-lang.org/cargo/guide/dependencies.html">
+    <p>The Cargo Book provides in depth information on cargo</p>
+  </Link>
+</Callout>
