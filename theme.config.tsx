@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
   chat: {
     link: "https://discord.gg/ADegEnxDhk",
   },
-  docsRepositoryBase: "https://github.com/Autumn-Ou/wpilib-rust-docs",
+  docsRepositoryBase: "https://github.com/Autumn-Ou/wpilib-rust-docs/tree/main",
   footer: {
     text: "WPILib Rust Docs © 2023, built with Next.js & Nextra.",
   },
