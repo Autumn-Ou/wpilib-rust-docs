@@ -28,8 +28,9 @@ motor.set_voltage(output);
 
 ### Static
 
-Static controllers can be used for tasks such as controlling a flywheel while ignoring fluctuating system voltage,
-which gives them the name "static"; they are less accurate than simple controllers but easier to set up.
+Static controllers have the acceleration gain defaulted to zero. Units of the gain values will dictate 
+units of the computed feedforward. which gives them the name "static"; they are less accurate than simple
+controllers but easier to set up.
 
 ```rust copy
 use wpilib::math::controllers::feed_forward::Static;
