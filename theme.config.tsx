@@ -19,7 +19,7 @@ const config: DocsThemeConfig = {
     const { route } = useRouter();
     const socialCard =
       route === "/" || !title
-        ? "https://wpilib-rust-docs.vercel.app/rust-social-wide.jpg"
+        ? "https://wpilib-rust-docs.vercel.app//api/og?WPILib_Rust=${WPILib_Rust}"
         : `https://wpilib-rust-docs.vercel.app//api/og?title=${title}`;
 
     return (
