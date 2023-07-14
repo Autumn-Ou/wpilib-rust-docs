@@ -12,7 +12,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: "https://github.com/Autumn-Ou/wpilib-rust-docs/tree/main",
   footer: {
-    text: "WPILib Rust Docs © 2023, built with Next.js & Nextra.",
+    text: "WPILib Rust Docs © 2023",
   },
   head: function useHead() {
     const { title } = useConfig();
@@ -35,8 +35,8 @@ const config: DocsThemeConfig = {
         <meta name="og:description" content="WPILib Rust Docs." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={socialCard} />
-        <meta name="twitter:site:domain" content="nextra.site" />
-        <meta name="twitter:url" content="https://nextra.site" />
+        <meta name="twitter:site:domain" content="WPILib Rust" />
+        <meta name="twitter:url" content="https://wpilib-rust-docs.vercel.app" />
         <meta
           name="og:title"
           content={title ? title + " – WPIlib Rust" : "WPIlib Rust"}
