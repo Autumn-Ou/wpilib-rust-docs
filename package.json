@@ -22,8 +22,8 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "next": "latest",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
+    "nextra": "^2.9.0",
+    "nextra-theme-docs": "^2.9.0",
     "postcss": "^8.4.25",
     "prettier": "^3.0.0",
     "react": "latest",

@@ -1,6 +1,7 @@
 ## Translation 2D
 
-The translation of a point in 2D is given by the following matrix: `[x, y]`, where x and y are within the field coordinate
+The translation of a point in 2D is given by the following matrix: $ \begin{bmatrix}\ x & y \end{bmatrix} $, where `x`
+and `y` are within the field coordinate
 system and measured in meters.
 
 ```rust copy
@@ -15,8 +16,8 @@ let translation = Translation2d::new(x, y);
 
 ## Rotation 2D
 
-The rotation of a point in 2D is given by the following matrix: `[theta]`, where theta is the angle of rotation in
-radians.
+The rotation of a point in 2D is given by the following matrix: $ \begin{bmatrix} \theta \end{bmatrix} $, where theta is
+the angle of rotation in radians.
 
 ```rust copy
 use wpilib::math::geometry::rotation2d::Rotation2d;
@@ -27,9 +28,10 @@ let rotation = Rotation2d::new(theta);
 
 ## Pose 2D
 
-The pose of a point in 2D is given by the following matrix: `[x, y, theta]`, where `x` and `y` are within the field
-coordinate system, measured in meters, and `theta` is the angle of rotation in radians. It serves as a combination of
-the translation and rotation matrices and is commonly used to represent the state of a robot on the field.
+The pose of a point in 2D is given by the following matrix: $ \begin{bmatrix} \ x & y & \theta \end{bmatrix} $, where
+`x` and `y` are within the field coordinate system, measured in meters, and $\theta$ _(theta)_ is the angle of rotation
+in radians. It serves as a combination of the translation and rotation matrices and is commonly used to represent the
+state of a robot on the field.
 
 ```rust copy
 use wpilib::math::geometry::pose2d::Pose2d;

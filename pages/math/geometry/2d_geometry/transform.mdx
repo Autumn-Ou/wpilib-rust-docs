@@ -12,12 +12,12 @@ Operations on a Translation2d perform operations to the vector represented by th
   scalar.
 - Rotation of a Translation2d by a counter-clockwise rotation (theta) about the origin can be performed by using
   `rotate_by(Rotation2d)`. This is equivalent to multiplying the vector by the matrix:
-
-```
-[cos(theta) -sin(theta)]
-
-[sin(theta)  cos(theta)]
-```
+  $
+\begin{bmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{bmatrix}
+$
 
 - Additionally, you can rotate a Translation2d by 180 degrees by using the unary `-` operator.
 
@@ -36,7 +36,7 @@ Transformations for Rotation2d are just arithmetic operations on the angle measu
 ### Transform & Twist 2D
 
 Transform2d which represents a transformation to a pose in 2d space. Twist2d represents a movement along an arc, both
-contain a `[x, y, theta]` matrix.
+contain a $\begin{bmatrix} \ x, & y, & \theta \end{bmatrix} $ matrix.
 
 Transform2d represents a relative transformation. It has a translation and a rotation component. Transforming a Pose2d
 by a Transform2d rotates the translation component of the transform by the rotation of the pose, and then adds the

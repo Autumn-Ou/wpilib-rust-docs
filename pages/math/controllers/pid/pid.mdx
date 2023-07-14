@@ -3,6 +3,8 @@
 The PID controller is a commonly used feedback controller consisting of proportional,
 integral, and derivative terms, hence the name.
 
+$u(t) = K_p e(t) + K_i \int_0^t e(\tau) \,d\tau + K_d \frac{de}{dt}$
+
 #### Proportional Term
 
 Proportional gains act like “software-defined springs” that pull the system toward the

@@ -1,6 +1,4 @@
-# Mycelium Project Docs
-
-An organized doc site build upon mdx for the Mycelium Project and its subprojects.
+# WPILib Rust Port Docs
 
 ## Acknowledgements
 
