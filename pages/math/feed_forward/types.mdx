@@ -69,5 +69,5 @@ use wpilib::math::controllers::feed_forward::Arm;
 
 let mut feedforward = Arm::new(ks, kg, kv, ka);
 
-let output = feedforward.calculate(position, velocity);
+let output = feedforward.p_v_calculate(position, velocity);
 ```
