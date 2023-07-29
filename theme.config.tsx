@@ -5,12 +5,12 @@ import { useRouter } from "next/router";
 const config: DocsThemeConfig = {
   logo: <span>WPILib Rust</span>,
   project: {
-    link: "https://github.com/oh-yes-0-fps/wpilib-rust",
+    link: "https://github.com/frclib-rs/wpilib-rust",
   },
   chat: {
     link: "https://discord.gg/ADegEnxDhk",
   },
-  docsRepositoryBase: "https://github.com/Autumn-Ou/wpilib-rust-docs/tree/main",
+  docsRepositoryBase: "https://github.com/frclib-rs/wpilib-rust-docs/tree/main",
   footer: {
     text: "WPILib Rust Docs © 2023",
   },
