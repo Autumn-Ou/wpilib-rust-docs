@@ -36,7 +36,10 @@ const config: DocsThemeConfig = {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={socialCard} />
         <meta name="twitter:site:domain" content="WPILib Rust" />
-        <meta name="twitter:url" content="https://wpilib-rust-docs.vercel.app" />
+        <meta
+          name="twitter:url"
+          content="https://wpilib-rust-docs.vercel.app"
+        />
         <meta
           name="og:title"
           content={title ? title + " – WPIlib Rust" : "WPIlib Rust"}

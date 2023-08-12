@@ -3,8 +3,7 @@ name: Incorrect Documentation
 about: Documentation on a specific page contains an error or is out of date
 title: Documentation Error
 labels: help wanted
-assignees: ''
-
+assignees: ""
 ---
 
 # Page

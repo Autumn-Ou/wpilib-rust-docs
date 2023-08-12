@@ -4,17 +4,17 @@ LQR is a multi input multi output control system meaning unlike a PID controller
 of and speed of a swerve module in a differential swerve and output the needed voltages for the two motors to allow the
 module to turn to the correct angle while maintaining a target speed.
 
-If the system is controllable, the optimal control policy u∗k that drives all the states to zero is −K_x.k. To converge
-to nonzero states, a reference vector r.k can be added to the state x.k
+If the system is controllable, the optimal control policy $u∗k$ that drives all the states to zero is $−K_x.k$. To converge
+to nonzero states, a reference vector $r.k$ can be added to the state $x.k$
 
-This means that optimal control can be achieved with simply a set of proportional gains on all the states. To use the
+This means that optimal control can be achieved with simply a set of proportional gains in all the states. To use the
 control law, we need knowledge of the full state of the system. That means we either have to measure all our states
 directly or estimate those we do not measure.
 
 ### Implementation
 
 ```rust copy
-use wpilib::math::controllers::pid::PIDController;
+use wpilib::math::controllers::lqr::LQRController;
 
 // TODO once implemented in the rust lib
 ```

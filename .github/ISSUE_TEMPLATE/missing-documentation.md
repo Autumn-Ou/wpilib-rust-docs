@@ -3,8 +3,7 @@ name: Missing Documentation
 about: Documentation for a feature or subsection is missing
 title: Missing Documentation
 labels: help wanted
-assignees: ''
-
+assignees: ""
 ---
 
 # Feature
