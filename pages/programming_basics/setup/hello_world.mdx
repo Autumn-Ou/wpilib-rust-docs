@@ -1,34 +1,34 @@
 ## Hello World
 
-In order to confirm you have everything correctly setup for your development machine, a simple hello world program in
-rust serves to test rustup, rustc, cargo, & your IDE are correctly configured
+To confirm you have everything correctly setup for your development machine, you can create a simple hello world program that tests if rustup, rustc, cargo, & your IDE are correctly configured.
 
 import { Steps } from "nextra/components";
 
 <Steps>
     ### Create Project
-    open a terminal and run `cargo new hello_world`
+    Open a terminal in the directory you want to store projects in and run `cargo new hello_world` to create a new, empty rust project.
 
     ### Open
-    open the created directory in your IDE
+    Open the created directory in your IDE of choice.
 
     ### Check
-    check that syntax highlighting is functioning in src/main.rs
+    Check that syntax highlighting is functioning in src/main.rs.
+    Also make sure that when you type invalid code and save the file, you get errors in the IDE.
+    If you do not, you may need to install a rust plugin for your IDE (see [IDE Setup](/ide_setup)).
 
     ### Run
-    run `cargo build` in the directory
+    Run `cargo run` in the directory
 
     ### Results
-    If your terminal prints the message below, you're ready to go with rust.
+    If your terminal prints the message below, you're ready to go with rust!
+
+    ```
+    Hello, world!
+    ```
 
 </Steps>
 
-```
-./targetdebug/hello_world
-Hello, world!
-```
-
 ### Help
 
-If this process failed, resources are available at [Rust Lang Docs](https://www.rust-lang.org/learn/get-started) and
-direct help is available in our discord server, just click the icon in the top right to join.
+If this process failed, resources are available at [Rust Lang Docs](https://www.rust-lang.org/learn/get-started).
+You can also get direct help in our discord server, just click the icon in the top right to join.

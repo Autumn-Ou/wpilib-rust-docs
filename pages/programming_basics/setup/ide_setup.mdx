@@ -3,21 +3,20 @@ import { Steps } from "nextra/components";
 ## VS Code
 
 <Steps>
-    ### Download
-    - Download [VS Code](https://code.visualstudio.com/)
+    ### Download & Install
+    You can find the downloads and install instructions on the [VS Code website](https://code.visualstudio.com/). It is available for all major operating systems and is completley free.
 
-    ### Configure Extensions
+    ### Install Extensions
 
-    - Install the rust-analyzer from the extension tab
-    - Install the `.toml` file extension
+    In the extensions tab, you can either search for and install the Rust Extension Pack, or install the following extensions individually:
+    - rust-analyzer
+    - Even Better TOML
 
-    ### Version Control
+    ### Final Steps
 
-    - Configure git
-
-    ### Final Check
-
-    - run `rustup --update`
+    - Restart VS Code after installing the extensions.
+    - Run `rustup --update` to make sure you have the latest version of rust installed.
+    - Configure version control (git or github desktop) if you haven't already.
 
 </Steps>
 
@@ -25,17 +24,16 @@ import { Steps } from "nextra/components";
 
 <Steps>
     ### Download
-    - Download [JetBrains CLion](https://www.jetbrains.com/clion/)
+    - Download [JetBrains CLion](https://www.jetbrains.com/clion/). If you are a student, you can get a free license through the [JetBrains Student Program](https://www.jetbrains.com/community/education/#students).
 
     ### Plugins
     - Install the official Rust plugin
-    - Go to settings / language & frameworks / rust / external linters and select clippy, if your machine has reasonable
-    compute power enable "Run external linter to analyze code on the fly"
+    - Go to settings / language & frameworks / rust / external linters and select clippy.
+    - If your machine has reasonable compute power enable "Run external linter to analyze code on the fly"
 
-    ### Version Control
-    - Configure git
+    ### Final Steps
 
-    ### Final Check
-    - run `rustup --update`
+    - Run `rustup --update` to make sure you have the latest version of rust installed.
+    - Configure version control (git or github desktop) if you haven't already.
 
 </Steps>
